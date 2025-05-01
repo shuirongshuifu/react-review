@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .liItem {
+            background-color: pink;
+            width: fit-content;
+            margin: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- CDN地址：https://www.runoob.com/react/react-install-cdn.html -->
+    <script src="../react/babel.min.js"></script>
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script type="text/babel">
+        const arr = ['孙悟空', '猪八戒', '沙和尚']
+        const vDom = (
+            <h1>
+                <ul>
+                    {
+                        arr.map((item, index) => {
+                            return (
+                                <li style={{ fontWeight: 200 }} className='liItem' key={index}>{item}</li>
+                            )
+                        })
+                    }
+                </ul>
+            </h1>
+        )
+
+        const rootElement = document.getElementById('root')
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(vDom);
+    </script>
+    <!-- 
+        备用：
+            <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/react/18.2.0/umd/react.production.min.js" ></script>
+            <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+            <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/babel-standalone/6.26.0/babel.min.js" ></script> 
+
+            <script src="https://cdn.staticfile.org/react/18.2.0/umd/react.development.js"></script>
+            <script src="https://cdn.staticfile.org/react-dom/18.2.0/umd/react-dom.development.js"></script>
+            <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+
+            <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+            <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+            <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    -->
+</body>
+
+</html>

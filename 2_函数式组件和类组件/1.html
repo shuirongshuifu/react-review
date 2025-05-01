@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .liItem {
+            background-color: pink;
+            width: fit-content;
+            margin: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="../react/babel.min.js"></script>
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script type="text/babel">
+
+        function MyComponents() {
+            const arr = ['刘备', '张飞', '关羽']
+            return (
+                <h1>
+                    <ul>
+                        {
+                            arr.map((item, index) => {
+                                return (
+                                    <li style={{ fontWeight: 200 }} className='liItem' key={index}>{item}</li>
+                                )
+                            })
+                        }
+                    </ul>
+                </h1>
+            )
+        }
+        const rootElement = document.getElementById('root')
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<MyComponents />);
+    </script>
+</body>
+
+</html>
