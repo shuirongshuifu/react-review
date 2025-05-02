@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="../react/babel.min.js"></script>
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script type="text/babel">
+
+        class MC extends React.Component {
+            render() {
+                return (
+                    <h1>
+                        <div>{this.props.name} {this.props.age}</div>
+                        <div>{this.props.person2.name} {this.props.person2.age}</div>
+                    </h1>
+                )
+            }
+        }
+
+        const rootElement = document.getElementById('root')
+        const root = ReactDOM.createRoot(rootElement);
+        let person2 = { name: '猪八戒', age: 88 }
+        let obj = { book: '西游记', author: '吴承恩' }
+        root.render(<MC name='孙悟空' age={500} person2={person2} {...obj} />);
+    </script>
+</body>
+
+</html>

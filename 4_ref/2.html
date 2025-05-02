@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="../react/babel.min.js"></script>
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script type="text/babel">
+
+        // ref还有一种字符串形式， ref='myRef' 不过不推荐用
+
+        class MC extends React.Component {
+            inputRef = React.createRef()
+            buttonRef = React.createRef()
+            state = {
+                id: 111,
+                lable: 'MC'
+            }
+            kkk = 'kkk'
+            render() {
+                return (
+                    <h1>
+                        <input type="text" ref={this.inputRef} />
+                        <br />
+                        <button ref={this.buttonRef} onClick={this.show} >点击显示输入框文字</button>
+                    </h1>
+                )
+            }
+            show = () => {
+                console.log(666, this);
+            }
+        }
+
+        const rootElement = document.getElementById('root')
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<MC name='tom'/>);
+    </script>
+</body>
+
+</html>

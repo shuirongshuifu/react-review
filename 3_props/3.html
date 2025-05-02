@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="../react/babel.min.js"></script>
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <!-- 引入用于校验类型的react的props的库存 -->
+    <script src="../react/prop-types.js"></script>
+    <script type="text/babel">
+
+        class MC extends React.Component {
+            // PropTypes.shape 对 props 对象的内部结构和属性类型加以验证
+            static propTypes = {
+                person: PropTypes.shape({
+                    name: PropTypes.string,
+                    age: PropTypes.number.isRequired,
+                }).isRequired,
+                speak: PropTypes.func.isRequired
+            };
+
+            // 指定整个person不传递的时候的默认值
+            static defaultProps = {
+                person: {
+                    name: '匿名',
+                    age: 0
+                }
+            };
+
+            state = {
+                book: '西游记',
+                author: '吴承恩'
+            }
+
+            render() {
+                return (
+                    <h1>
+                        { /* propos是只读的，不能修改 */}
+                        <div>{this.props.person.name || '匿名'} {this.props.person.age}</div>
+                    </h1>
+                )
+            }
+        }
+
+        const rootElement = document.getElementById('root')
+        const root = ReactDOM.createRoot(rootElement);
+
+        // let person = { name: '沙和尚', age: 1000 }
+        let person = { age: 99999 }
+        root.render(<MC person={person} speak={() => { }} />);
+    </script>
+</body>
+
+</html>

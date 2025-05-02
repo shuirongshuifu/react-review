@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="../react/babel.min.js"></script>
+    <script src="../react/react.development.js"></script>
+    <script src="../react/react-dom.development.js"></script>
+    <script type="text/babel">
+
+        class MC extends React.Component {
+            state = {
+                username: '',
+                password: '',
+            }
+            render() {
+                return (
+                    <div>
+                        <form action="#" onSubmit={this.onSubmit}>
+                            用户名：<input type="text" name='username' onChange={(e) => {
+                                this.setInputData(e, 'username')
+                            }} />
+                            <br />
+                            密码：<input type="text" name='password' onChange={(e) => {
+                                this.setInputData(e, 'password')
+                            }} />
+                            <br />
+                            <button onClick={this.save}>保存</button>
+                        </form>
+                    </div>
+                )
+            }
+            onSubmit = (e) => {
+                e.preventDefault()
+            }
+            setInputData = (e, dataType) => {
+                console.log(e.target.value, dataType)
+                this.setState({
+                    [dataType]: e.target.value
+                })
+            }
+            save = () => {
+                console.log(666);
+            }
+        }
+
+        const rootElement = document.getElementById('root')
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<MC />);
+    </script>
+</body>
+
+</html>
