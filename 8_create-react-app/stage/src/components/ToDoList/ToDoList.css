@@ -1,0 +1,11 @@
+.todoList {
+    width: 600px;
+    height: 360px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 6px 20px;
+}

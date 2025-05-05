@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 export default class Hello extends Component {
     render() {
         return (
-            <div>Hello</div>
+            <div style={{ textAlign: 'center' }}>Hello</div>
         )
     }
 }
