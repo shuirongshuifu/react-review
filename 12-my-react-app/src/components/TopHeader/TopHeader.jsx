@@ -23,7 +23,7 @@ export default function TopHeader({ MenuItemRouters }) {
                     showSearch
                     optionFilterProp="label"
                     value={value}
-                    style={{ width: 120 }}
+                    style={{ width: 180 }}
                     onChange={handleChange}
                     fieldNames={{ label: 'label', value: 'key' }}
                     options={MenuItemRouters}
