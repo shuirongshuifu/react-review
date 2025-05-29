@@ -2,6 +2,7 @@ import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Dynamic from './pages/Dynamic/Dynamic'
 import Watcher from './pages/Watcher/Watcher'
+import UseMemo from './pages/UseMemo/UseMemo'
 import Computed from './pages/Computed/Computed'
 
 import { AndroidOutlined } from '@ant-design/icons';
@@ -32,6 +33,12 @@ export const MenuItemRouters = [
         label: '监听',
         icon: <AndroidOutlined />,
         element: <Watcher />
+    },
+    {
+        key: '/useMemo',
+        label: 'useMemo&memo',
+        icon: <AndroidOutlined />,
+        element: <UseMemo />
     },
     {
         key: '/computed',
