@@ -4,6 +4,7 @@ import Dynamic from './pages/Dynamic/Dynamic'
 import Watcher from './pages/Watcher/Watcher'
 import UseMemo from './pages/UseMemo/UseMemo'
 import Computed from './pages/Computed/Computed'
+import UseCallback from './pages/UseCallback/UseCallback'
 
 import { AndroidOutlined } from '@ant-design/icons';
 
@@ -30,7 +31,7 @@ export const MenuItemRouters = [
     },
     {
         key: '/watcher',
-        label: '监听',
+        label: 'useEffect',
         icon: <AndroidOutlined />,
         element: <Watcher />
     },
@@ -45,6 +46,12 @@ export const MenuItemRouters = [
         label: '计算缓存',
         icon: <AndroidOutlined />,
         element: <Computed />
+    },
+    {
+        key: '/useCallback',
+        label: 'useCallback',
+        icon: <AndroidOutlined />,
+        element: <UseCallback />
     },
     // {
     //     key: '/computed',
