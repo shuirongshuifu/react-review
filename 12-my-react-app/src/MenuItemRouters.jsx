@@ -3,8 +3,9 @@ import About from './pages/About/About'
 import Dynamic from './pages/Dynamic/Dynamic'
 import Watcher from './pages/Watcher/Watcher'
 import UseMemo from './pages/UseMemo/UseMemo'
-import Computed from './pages/Computed/Computed'
 import UseCallback from './pages/UseCallback/UseCallback'
+import UseContext from './pages/UseContext/UseContext'
+import UseImperativeHandle from './pages/UseImperativeHandle/UseImperativeHandle'
 
 import { AndroidOutlined } from '@ant-design/icons';
 
@@ -42,23 +43,24 @@ export const MenuItemRouters = [
         element: <UseMemo />
     },
     {
-        key: '/computed',
-        label: '计算缓存',
-        icon: <AndroidOutlined />,
-        element: <Computed />
-    },
-    {
         key: '/useCallback',
         label: 'useCallback',
         icon: <AndroidOutlined />,
         element: <UseCallback />
     },
-    // {
-    //     key: '/computed',
-    //     label: '爷孙组件通信',
-    //     icon: <AndroidOutlined />,
-    //     element: <Computed />
-    // },
+    {
+        key: '/useContext',
+        label: 'useContext',
+        icon: <AndroidOutlined />,
+        element: <UseContext />
+    },
+    {
+        key: '/useImperativeHandle',
+        label: 'useImperativeHandle',
+        icon: <AndroidOutlined />,
+        element: <UseImperativeHandle />
+    },
+    // useRef、useLayoutEffect、useReducer
 ]
 
 
